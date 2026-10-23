@@ -1,1 +1,209 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
 
+body {
+min-height: 100vh;
+background: radial-gradient(circle at center, #071b38, #02050d 70%);
+color: #00d9ff;
+font-family: Arial, sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px;
+}
+
+.jarvis-container {
+width: 100%;
+max-width: 850px;
+min-height: 600px;
+padding: 25px;
+border: 1px solid #087da5;
+border-radius: 18px;
+background: rgba(3, 14, 30, 0.94);
+box-shadow: 0 0 35px rgba(0, 217, 255, 0.2);
+}
+
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 15px;
+padding-bottom: 20px;
+border-bottom: 1px solid #164b68;
+}
+
+header h2 {
+letter-spacing: 4px;
+}
+
+#status {
+color: #00ff99;
+font-size: 12px;
+}
+
+main {
+padding: 25px 0;
+}
+
+.reactor {
+position: relative;
+width: 260px;
+height: 260px;
+margin: 10px auto 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+}
+
+.ring {
+position: absolute;
+border: 2px solid #00cfff;
+border-radius: 50%;
+box-shadow: 0 0 20px #007fa8;
+}
+
+.ring1 {
+width: 250px;
+height: 250px;
+border-top-color: transparent;
+border-bottom-color: transparent;
+animation: rotate 5s linear infinite;
+}
+
+.ring2 {
+width: 205px;
+height: 205px;
+border-left-color: transparent;
+border-right-color: transparent;
+animation: rotateBack 4s linear infinite;
+}
+
+.jarvis-core {
+width: 155px;
+height: 155px;
+border: 2px solid #00d9ff;
+border-radius: 50%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 12px;
+background: radial-gradient(circle, #073e69, #020914);
+box-shadow: 0 0 30px #007fa8;
+}
+
+.jarvis-core h1 {
+font-size: 20px;
+letter-spacing: 2px;
+}
+
+.jarvis-core p {
+font-size: 11px;
+margin-top: 10px;
+}
+
+.controls {
+display: flex;
+justify-content: center;
+gap: 12px;
+margin: 25px 0;
+flex-wrap: wrap;
+}
+
+button {
+padding: 12px 20px;
+border: 1px solid #00cfff;
+border-radius: 7px;
+background: #032844;
+color: #00e5ff;
+cursor: pointer;
+font-weight: bold;
+}
+
+button:hover {
+background: #075078;
+box-shadow: 0 0 15px #00cfff;
+}
+
+.chat-box {
+border: 1px solid #164b68;
+border-radius: 10px;
+padding: 15px;
+background: #020914;
+}
+
+#chatMessages {
+min-height: 80px;
+max-height: 200px;
+overflow-y: auto;
+line-height: 1.7;
+overflow-wrap: anywhere;
+}
+
+.input-area {
+display: flex;
+gap: 10px;
+margin-top: 15px;
+}
+
+#userInput {
+flex: 1;
+min-width: 0;
+padding: 12px;
+background: #071b30;
+color: white;
+border: 1px solid #087da5;
+border-radius: 6px;
+outline: none;
+}
+
+footer {
+text-align: center;
+font-size: 11px;
+color: #5589a8;
+padding-top: 15px;
+border-top: 1px solid #164b68;
+}
+
+@keyframes rotate {
+to {
+transform: rotate(360deg);
+}
+}
+
+@keyframes rotateBack {
+to {
+transform: rotate(-360deg);
+}
+}
+
+@media (max-width: 500px) {
+.jarvis-container {
+padding: 15px;
+}
+
+header h2 {
+    font-size: 17px;
+    letter-spacing: 2px;
+}
+
+.reactor {
+    transform: scale(0.85);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.input-area {
+    flex-direction: column;
+}
+
+.input-area button {
+    width: 100%;
+}
+
+}

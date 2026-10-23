@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
+    <title>J.A.R.V.I.S. AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="jarvis-container">
+
+        <header>
+            <h2>J.A.R.V.I.S.</h2>
+            <span id="status">SYSTEM ONLINE</span>
+        </header>
+
+        <main>
+
+            <div class="reactor">
+                <div class="ring ring1"></div>
+                <div class="ring ring2"></div>
+
+                <div class="jarvis-core">
+                    <h1>J.A.R.V.I.S.</h1>
+                    <p id="message">Awaiting your command, sir.</p>
+                </div>
+            </div>
+
+            <div class="controls">
+
+                <button id="micBtn">
+                    🎙 ACTIVATE JARVIS
+                </button>
+
+                <button id="stopBtn">
+                    STOP
+                </button>
+
+            </div>
+
+            <div class="chat-box">
+                <div id="chatMessages"></div>
+
+                <div class="input-area">
+                    <input
+                        type="text"
+                        id="userInput"
+                        placeholder="Ask JARVIS anything..."
+                    >
+
+                    <button id="sendBtn">SEND</button>
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+            JARVIS AI SYSTEM • VERSION 1.0
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

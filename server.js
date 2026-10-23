@@ -1,7 +1,12 @@
 const express = require("express");
+const cors = require("cors");
 const OpenAI = require("openai");
 
 const app = express();
+
+app.use(cors({
+origin: "https://vissionzz.github.io"
+}));
 
 app.use(express.json());
 
@@ -15,11 +20,10 @@ const apiKey = process.env.OPENAI_API_KEY;
 
 if (!apiKey) {
   return res.status(500).json({
-    error: "JARVIS AI needs an API key on its server."
+    error: "OPENAI_API_KEY is missing from Render Environment."
   });
 }
 
-const client = new OpenAI({ apiKey });
 const { message } = req.body;
 
 if (!message || typeof message !== "string") {
@@ -28,12 +32,14 @@ if (!message || typeof message !== "string") {
   });
 }
 
+const client = new OpenAI({ apiKey });
+
 const response = await client.chat.completions.create({
   model: "gpt-4o-mini",
   messages: [
     {
       role: "system",
-      content: "You are JARVIS, a helpful, intelligent personal AI assistant. Speak clearly, confidently, and naturally. Keep answers concise when speaking aloud."
+      content: "You are JARVIS, a helpful and intelligent personal AI assistant. Speak clearly, confidently, and naturally. Keep spoken answers concise."
     },
     {
       role: "user",
@@ -50,7 +56,7 @@ res.json({
 console.error("JARVIS error:", error.message);
 
 res.status(500).json({
-  error: "JARVIS could not process that request. Check the server configuration and API billing."
+  error: "JARVIS encountered an AI server error. Check the Render logs and API billing."
 });
 
 }
